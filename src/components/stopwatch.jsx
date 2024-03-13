@@ -23,7 +23,11 @@ function Stopwatch() {
   };
 
   const startStopwatch = () => {
-    setRunning(!running);
+    setRunning(true);
+  };
+
+  const stopStopwatch = () => {
+    setRunning(false);
   };
 
   const resetStopwatch = () => {
@@ -37,7 +41,7 @@ function Stopwatch() {
       <div className="time">{formatTime(time)}</div>
       <div className="buttons">
         {running ? (
-          <button onClick={startStopwatch}>Stop</button>
+          <button onClick={stopStopwatch}>Stop</button>
         ) : (
           <button onClick={startStopwatch}>Start</button>
         )}
